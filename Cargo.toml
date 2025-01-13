@@ -1,0 +1,15 @@
+[package]
+name = "ak-injector"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+slint = "1.8.0"
+sysinfo = "0.29.0"
+winapi = "0.3.9"
+win-msgbox = "0.2.1"
+
+[build-dependencies]
+slint-build = "1.8.0"

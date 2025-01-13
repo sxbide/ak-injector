@@ -1,0 +1,126 @@
+import { Button, VerticalBox, LineEdit, StandardListView, HorizontalBox, Switch, Palette } from "std-widgets.slint";
+
+import "font/Montserrat-Medium.ttf";
+
+export component AppWindow inherits Window {
+
+    in-out property <[StandardListViewItem]> process_list: [];
+    in-out property <string> process_filter_name;
+    in-out property <string> path_to_dll;
+    in-out property <string> selected_process_index;
+
+    in-out property <string> error;
+    in-out property <string> success;
+
+    callback process-filter-value();
+    callback refresh-process-filter();
+
+    title: "AK Injector";
+    icon: @image-url("ak47.png");
+
+    callback inject-file();
+
+    min-width: 520px;
+    min-height: 500px;
+    padding: 0px;
+
+    VerticalBox {
+
+        HorizontalBox {
+            alignment: center;
+            Text {
+                text: error;
+                font-weight: 800;
+                font-family: "Montserrat";
+                color: #bf3c32;
+                horizontal-alignment: center;
+                visible: error != "";
+                height: error != "" ? 15px : 0px;
+
+                Rectangle {
+                    background: red;
+                    opacity: 0.2;
+                }
+            }
+
+            Text {
+                text: success;
+                font-weight: 800;
+                font-family: "Montserrat";
+                color: #34c736;
+                horizontal-alignment: center;
+                visible: success != "";
+                height: success != "" ? 15px : 0px;
+
+                Rectangle {
+                    background: green;
+                    opacity: 0.2;
+                }
+            }
+        }
+
+        HorizontalBox {
+            alignment: space-between;
+
+            HorizontalBox {
+                alignment: start;
+                padding: 0px;
+                Text {
+                    text: "Ak Injector";
+                }
+            }
+
+            Image {
+                width: 25px;
+                colorize: Palette.color-scheme == ColorScheme.dark ? white : black;
+                source: @image-url("ak47.svg");
+            }
+
+            Switch {
+                horizontal-stretch: 0;
+                checked: Palette.color-scheme == ColorScheme.dark;
+                toggled => {
+                    Palette.color-scheme = self.checked ? ColorScheme.dark : ColorScheme.light;
+                }
+            }
+        }
+
+        spacing: 5px;
+        HorizontalBox {
+            LineEdit {
+                placeholder-text: "Path to .dll";
+
+                edited(text) => {
+                    path_to_dll = text;
+                }
+            }
+
+            Button {
+                text: "Inject DLL";
+
+                clicked => {
+                    root.inject-file();
+                }
+            }
+        }
+
+        HorizontalBox {
+            LineEdit {
+                placeholder-text: "Search for process";
+
+                edited(text) => {
+                    process_filter_name = text;
+                    root.process-filter-value();
+                }
+            }
+        }
+
+        StandardListView {
+            model: process_list;
+
+            current-item-changed(current-item) => {
+                selected_process_index = current-item;
+            }
+        }
+    }
+}
