@@ -2,13 +2,12 @@
 
 mod file;
 
-use slint::{slint, Model, ModelRc, SharedString, StandardListViewItem, VecModel};
+use slint::{Model, ModelRc, SharedString, StandardListViewItem, VecModel};
 use std::error::Error;
 use std::path::Path;
 use std::rc::Rc;
 use std::sync::Arc;
-use sysinfo::{Pid, ProcessExt, System, SystemExt};
-use win_msgbox::{CancelTryAgainContinue, Okay};
+use sysinfo::{ProcessExt, System, SystemExt};
 
 slint::include_modules!();
 
@@ -100,7 +99,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                             process_id_str
                         )));
                     }
-
                 } else {
                     println!("Failed to extract process ID from the selected item");
                     app_clone.set_error(SharedString::from("Failed to extract process ID from the selected item"));
@@ -109,7 +107,6 @@ fn main() -> Result<(), Box<dyn Error>> {
                 println!("Invalid index or failed to access the process list");
                 app_clone.set_error(SharedString::from("Invalid index or failed to access the process list"));
             }
-
         }
     });
 

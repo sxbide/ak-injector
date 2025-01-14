@@ -1,14 +1,13 @@
 extern crate winapi;
 
-use std::ptr;
 use std::ffi::CString;
-use winapi::um::processthreadsapi::{OpenProcess, CreateRemoteThread};
-use winapi::um::memoryapi::{VirtualAllocEx, WriteProcessMemory};
-use winapi::um::winnt::{PROCESS_ALL_ACCESS, MEM_COMMIT, MEM_RESERVE, PAGE_READWRITE};
-use winapi::um::libloaderapi::GetProcAddress;
+use std::ptr;
 use winapi::um::handleapi::CloseHandle;
-use winapi::um::libloaderapi::LoadLibraryA;
 use winapi::um::libloaderapi::GetModuleHandleA;
+use winapi::um::libloaderapi::GetProcAddress;
+use winapi::um::memoryapi::{VirtualAllocEx, WriteProcessMemory};
+use winapi::um::processthreadsapi::{CreateRemoteThread, OpenProcess};
+use winapi::um::winnt::{MEM_COMMIT, MEM_RESERVE, PAGE_READWRITE, PROCESS_ALL_ACCESS};
 
 pub(crate) fn attach_to_process(pid: u32, dll_path: &str) -> Result<(), String> {
     let process_handle = unsafe {
