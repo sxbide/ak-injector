@@ -17,7 +17,6 @@ struct Name {
 }
 
 
-
 fn main() -> Result<(), Box<dyn Error>> {
     let app = Arc::new(AppWindow::new()?);
 
@@ -55,15 +54,6 @@ fn main() -> Result<(), Box<dyn Error>> {
             app_clone.set_process_list(filtered_model_rc);
         }
     });
-
-
-    //     app_clone.on_refresh_process_filter({
-    //         let app_clone = Arc::clone(&app_clone);
-    //         move || {
-    //             let filtered_model = Rc::new(VecModel::from(fetch_active_processes()));
-    //             app_clone.set_process_list(filtered_model.clone().into());
-    //         }
-    //     });
 
     app_clone.on_inject_file({
         let app_clone = Arc::clone(&app_clone);
@@ -115,23 +105,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// fn fetch_active_processes_with_id() -> HashMap<StandardListViewItem, Pid> {
-//     let mut test = HashMap::new();
-//
-//     let mut system = System::new_all();
-//     system.refresh_all();
-//
-//     for process in system.processes() {
-//         let process_name = process.1.name().to_string();
-//         test.insert(
-//             StandardListViewItem::from(slint::format!("{}", process_name.as_str())),
-//             *process.0,
-//         );
-//     }
-//
-//     test
-// }
-
 fn fetch_active_processes() -> Vec<StandardListViewItem> {
     let mut system = System::new_all();
     system.refresh_all();
@@ -140,7 +113,7 @@ fn fetch_active_processes() -> Vec<StandardListViewItem> {
 
     for process in system.processes() {
         let process_name = process.1.name().to_string();
-        let process_id = *process.0; // Dereference to get Pid value
+        let process_id = *process.0;
         items.push(StandardListViewItem::from(slint::format!("{} ({})", process_name, process_id)));
     }
 
