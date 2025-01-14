@@ -8,6 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ef19d6c-3d76-4dff-8854-cd3532bebd1d" name="Changes" comment="Modified README.md">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +144,7 @@
       <workItem from="1736802223099" duration="527000" />
       <workItem from="1736802761197" duration="431000" />
       <workItem from="1736803202743" duration="1281000" />
-      <workItem from="1736854714793" duration="2412000" />
+      <workItem from="1736854714793" duration="2591000" />
     </task>
     <task id="LOCAL-00001" summary="Modified Layout &amp; Injection button design">
       <option name="closed" value="true" />
@@ -176,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736857058931</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Modified README.md">
+      <option name="closed" value="true" />
+      <created>1736857163465</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1736857163465</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

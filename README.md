@@ -6,17 +6,21 @@
 
 ## <u><a href="#howto">How to use the injector?<a/></u>
 
-#### Main Window:
+### <u><a href="#screenshots">Screenshots<a/></u>
 
-![Test](https://i.imgur.com/QvBNEac.png)
-![Test](https://i.imgur.com/otSNkrL.png)
+<section id="screenshots" class="screenshots">
+    <img src="https://i.imgur.com/QvBNEac.png" width="550px" alt="Image not found">
+    <img src="https://i.imgur.com/otSNkrL.png" width="550px" alt="Image not found">
+</section>
+
 
 <section id="howto" class="howto">
-<h2>How to:</h2>
+    <h2>How to:</h2>
 
-> 1 | Paste the link to your desired .dll you want to attach.<br/>
-> 2 | Select any of your running processes you want to inject to. <br/>
-> 3 | Press Inject to selected to inject your dll ;)
+    > 1 | Paste the link to your desired .dll you want to attach.<br/>
+    > 2 | Select any of your running processes you want to inject to. <br/>
+    > 3 | Press Inject to selected to inject your dll ;)
+
 </section>
 
 ## Information:
