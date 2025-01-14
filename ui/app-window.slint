@@ -94,14 +94,6 @@ export component AppWindow inherits Window {
                     path_to_dll = text;
                 }
             }
-
-            Button {
-                text: "Inject DLL";
-
-                clicked => {
-                    root.inject-file();
-                }
-            }
         }
 
         HorizontalBox {
@@ -111,6 +103,18 @@ export component AppWindow inherits Window {
                 edited(text) => {
                     process_filter_name = text;
                     root.process-filter-value();
+                }
+            }
+
+            Button {
+                text: "Inject to selected";
+                icon: @image-url("icon/inject-svgrepo-com.png");
+                enabled: selected_process_index != "" && path_to_dll != "";
+                colorize-icon: true;
+                primary: true;
+
+                clicked => {
+                    root.inject-file();
                 }
             }
         }
