@@ -85,7 +85,7 @@ export component AppWindow inherits Window {
             }
         }
 
-        spacing: 5px;
+        spacing: 1px;
         HorizontalBox {
             LineEdit {
                 placeholder-text: "Path to .dll";
@@ -105,9 +105,19 @@ export component AppWindow inherits Window {
                     root.process-filter-value();
                 }
             }
+        }
 
+        StandardListView {
+            model: process_list;
+
+            current-item-changed(current-item) => {
+                selected_process_index = current-item;
+            }
+        }
+
+        VerticalBox {
             Button {
-                text: "Inject to selected";
+                text: "Inject into process";
                 icon: @image-url("icon/inject-svgrepo-com.png");
                 enabled: selected_process_index != "" && path_to_dll != "";
                 colorize-icon: true;
@@ -116,14 +126,6 @@ export component AppWindow inherits Window {
                 clicked => {
                     root.inject-file();
                 }
-            }
-        }
-
-        StandardListView {
-            model: process_list;
-
-            current-item-changed(current-item) => {
-                selected_process_index = current-item;
             }
         }
     }
