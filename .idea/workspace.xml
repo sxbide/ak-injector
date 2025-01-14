@@ -7,12 +7,9 @@
     <cargoProject FILE="$PROJECT_DIR$/Cargo.toml" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3ef19d6c-3d76-4dff-8854-cd3532bebd1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/ui/icon/inject-svgrepo-com.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/injection-svgrepo-com.png" afterDir="false" />
+    <list default="true" id="3ef19d6c-3d76-4dff-8854-cd3532bebd1d" name="Changes" comment="Modified Layout &amp; Injection button design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.rs" beforeDir="false" afterPath="$PROJECT_DIR$/build.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/app-window.slint" beforeDir="false" afterPath="$PROJECT_DIR$/ui/app-window.slint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -145,11 +143,24 @@
       <workItem from="1736802223099" duration="527000" />
       <workItem from="1736802761197" duration="431000" />
       <workItem from="1736803202743" duration="1281000" />
-      <workItem from="1736854714793" duration="998000" />
+      <workItem from="1736854714793" duration="1999000" />
     </task>
+    <task id="LOCAL-00001" summary="Modified Layout &amp; Injection button design">
+      <option name="closed" value="true" />
+      <created>1736855741927</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736855741927</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Modified Layout &amp; Injection button design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified Layout &amp; Injection button design" />
   </component>
 </project>
