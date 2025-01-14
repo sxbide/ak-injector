@@ -12,23 +12,18 @@
 ![Test](https://i.imgur.com/otSNkrL.png)
 
 <section id="howto" class="howto">
-## How to:
+<h2>How to:</h2>
 
 > 1 | Paste the link to your desired .dll you want to attach.<br/>
 > 2 | Select any of your running processes you want to inject to. <br/>
 > 3 | Press Inject to selected to inject your dll ;)
 </section>
 
-## Development:
+## Information:
 
 > I developed this rust app for learning purposes. The code may not be the best because im learning ;) <br/>
-> Feel free to use this injector to inject your dll's into any process.
-
-<br/>
-
-##### I take no responsibility for what is done with it. I offer this injector free for use to anyone.
-
-##### You may not copy the code or publish my code and say its yours!
-
-##### © sxbide
+> Feel free to use this injector to inject your dll's into any process. <br/>
+> I take no responsibility for what is done with it. I offer this injector free for use to anyone. <br/>
+> You may not copy the code or publish my code and say its yours! <br/>
+> © sxbide <br/>
 
