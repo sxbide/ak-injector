@@ -9,7 +9,9 @@
 ### <u><a href="#screenshots">Screenshots<a/></u>
 
 <section id="screenshots" class="screenshots">
+    <h6>Dark Mode</h6>
     <img src="https://i.imgur.com/QvBNEac.png" width="550px" alt="Image not found">
+    <h6>Light Mode</h6>
     <img src="https://i.imgur.com/otSNkrL.png" width="550px" alt="Image not found">
 </section>
 
