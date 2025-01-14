@@ -4,6 +4,7 @@ mod file;
 
 use slint::{slint, Model, ModelRc, SharedString, StandardListViewItem, VecModel};
 use std::error::Error;
+use std::path::Path;
 use std::rc::Rc;
 use std::sync::Arc;
 use sysinfo::{Pid, ProcessExt, System, SystemExt};
@@ -58,11 +59,22 @@ fn main() -> Result<(), Box<dyn Error>> {
     app_clone.on_inject_file({
         let app_clone = Arc::clone(&app_clone);
         move || {
-            if app_clone.get_path_to_dll().is_empty() {
+            let path_to_dll = app_clone.get_path_to_dll();
+            let path_str = path_to_dll.as_str();
+
+            if path_str.is_empty() {
                 println!("Path to dll is empty!");
                 app_clone.set_error(SharedString::from("The path to your .dll file cannot be empty."));
                 return;
             }
+
+            let path = Path::new(path_str);
+
+            if !path.exists() {
+                app_clone.set_error(SharedString::from("Your .dll file could not be found."));
+                return;
+            }
+
 
             let selected_index = app_clone.get_selected_process_index();
             let process_list = app_clone.get_process_list();
@@ -78,8 +90,9 @@ fn main() -> Result<(), Box<dyn Error>> {
                             .expect("Failed to attach the DLL");
                         app_clone.set_success(SharedString::from(format!(
                             "Your .dll file has been attached to {}",
-                            cleaned_process_id_str
+                            process_info
                         )));
+                        app_clone.set_error(SharedString::new());
                     } else {
                         println!("Failed to parse process ID: {}", process_id_str);
                         app_clone.set_error(SharedString::from(format!(
